@@ -1,0 +1,62 @@
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Google Sans', sans-serif;
+    
+}
+
+h1 {
+    font-size: 70px;
+    font-weight: 1000;
+    padding-left: 120px;
+    padding-top: 120px;
+}
+
+hr {
+    border-left: 80vw solid rgb(255, 255, 255);
+    margin-left: 120px;
+    margin-top: -20px;
+    margin-bottom: 20px;
+}
+
+section {
+    height: 100vh;
+    text-align: left;
+}
+
+.homepage {
+    background-color: rgb(23, 23, 23);
+
+    color: aliceblue;
+}
+
+.profile {
+    background:  
+    linear-gradient(rgb(224, 126, 6) 20%, rgb(198, 224, 6));
+
+    color: aliceblue;
+}
+
+.sub1 {
+    opacity: 60%;
+    font-size: 25px;
+    font-weight: lighter;
+    width: 700px;
+    padding-left: 120px;
+    padding-top: 30px;
+}
+
+.highlight {
+    color: rgb(226, 171, 43);
+    font-size: 150px;
+    font-weight: 1000;
+    padding-left: 115px;
+    padding-top: 0px;
+    margin-top: -20px;  
+}
+
+.simple{
+    background-color: brown;
+}
