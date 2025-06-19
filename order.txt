@@ -1,0 +1,54 @@
+1. Positioning
+
+Copy
+Edit
+position
+top / right / bottom / left
+z-index
+
+
+2. Box Model
+
+display
+flex / grid properties
+float / clear
+width / height / max-width / max-height / min-width / min-height
+padding
+margin
+box-sizing
+overflow
+
+
+3. Typography
+
+font / font-family / font-size / font-weight / font-style
+line-height
+letter-spacing
+text-align
+text-transform
+text-decoration
+color
+
+
+4. Background and Borders
+
+background / background-color / background-image / background-size / background-position
+border / border-radius / border-color / border-style / border-width
+box-shadow
+
+
+5. Visual Effects
+
+opacity
+visibility
+transform
+transition
+animation
+
+
+6. Others / Miscellaneous
+
+cursor
+pointer-events
+user-select
+content (for ::before / ::after)
