@@ -1,9 +1,7 @@
 1. Positioning
 
-Copy
-Edit
 position
-top / right / bottom / left
+top / bottom / left / right
 z-index
 
 
@@ -11,6 +9,7 @@ z-index
 
 display
 flex / grid properties
+justify-content
 float / clear
 width / height / max-width / max-height / min-width / min-height
 padding
@@ -27,12 +26,14 @@ letter-spacing
 text-align
 text-transform
 text-decoration
+word-wrap
+writing-mode
 color
 
 
 4. Background and Borders
 
-background / background-color / background-image / background-size / background-position
+background / background-color / background-image / background-size / background-position / background-blend-mode / background-attachment
 border / border-radius / border-color / border-style / border-width
 box-shadow
 
@@ -44,6 +45,7 @@ visibility
 transform
 transition
 animation
+mix-blend-mode
 
 
 6. Others / Miscellaneous

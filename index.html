@@ -7,6 +7,7 @@
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Google Sans">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Nova Flat">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Oxanium">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto Condensed">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Rancho&effect=shadow-multiple|anaglyph">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Rancho&effect=shadow-multiple|3d">
     <style>        
@@ -33,14 +34,15 @@
             height: fit-content;
             min-height: 100vh;
             text-align: left;
+            color: aliceblue;
         }
 
         #homepage {
             height: 100vh;
-            color: aliceblue;
             background: url(images/space2.gif);
             background-color: rgb(48, 16, 84);            
             background-blend-mode:lighten;
+            background-attachment: fixed;
         }
 
         .info-container {
@@ -48,11 +50,10 @@
             height: 100%; 
         }
 
-        .info {
+        #homepage .info {
             position: absolute;
             top: 50%;
             left: 10vw;
-
             transform: translateY(-50%);
         }
 
@@ -65,24 +66,25 @@
         }
 
         .highlight {
+            width: fit-content;
             margin-top: -2.7vh;
             margin-left: -0.3vw;
-            color: rgb(226, 171, 43);
             font-size: 9.35rem;
             font-weight: 1000;
-        }
-
-        .icon-container {
-            margin-top: 6%;
+            color: rgb(226, 171, 43);
         }
 
         .icon {
+            margin-top: 6%;
+        }
+
+        .icon img {
             height: 8vh;
             margin-right: 5%;
             transition: all 0.07s ease-in-out;
         }
 
-        .icon:hover {
+        .icon img:hover {
             transform: scale(1.2);
         }
 
@@ -103,7 +105,7 @@
             align-items: center;
             justify-content: center;
             width: 29.3vw;
-            padding: 6.4vh 0vh 6.4vh 0vh;
+            padding: 6.4vh;
             background: linear-gradient(rgb(81, 22, 148), rgb(226, 171, 43));
             border: 0.8rem solid rgb(226, 171, 43);
             border-style: outset;
@@ -118,46 +120,162 @@
         }
 
         .navbar li:hover {
-            padding: 6.8vh 6.8vh;
+            padding: 6.8vh;
             margin-top: 2.7vh;
             margin-bottom: 2.7vh;
             background: linear-gradient(rgb(119, 0, 255), rgb(255, 179, 0));
-            border: 0.4rem solid rgb(226, 171, 43);
-            border-bottom: 2rem solid rgb(226, 171, 43);
             border-style: outset;
+            border-width: 0.4rem 0.4rem 2rem 0.4rem;
             box-shadow: 0 0 5rem 0 rgb(226, 171, 43, 0.3);
             transform: scale(1.08);
         }
 
         a:link {
             text-decoration: none;
-            color: rgb(255, 255, 255);
+            color: inherit;
         }
 
         a:visited {
             text-decoration: none;
-            color: rgb(255, 255, 255);
+            color: inherit;
         }
 
         a:active {
             text-decoration: none;
-            color: rgb(255, 255, 255);
+            color: inherit;
         }
 
-
         #page1 {
-            color: aliceblue;
+            font-size: 2rem;
             background-color: rgb(226, 171, 43);  
         }
 
+        #page1 .info {
+            position: relative;
+            display: flex;
+            flex-direction: row;
+            padding: 10vh 5vw; 
+        }
+
+        .potrait {
+            position: relative;
+            width: 30vw;
+            height: max-content;
+            overflow: hidden;
+            background: url('images/space2.gif');
+            background-color: rgb(48, 16, 84);            
+            background-blend-mode:lighten;
+            background-attachment: fixed;
+            border: 0.3rem solid rgb(92, 70, 17);
+            border-radius: 4vh;
+        }
+
+        .potrait img {
+            display: block;
+            width: 100%;
+            height: auto;
+            overflow: hidden;
+            transition: all 1s ease;
+        }
+
+        .potrait img:hover {
+            transform: scale(1.2);
+        }
+
+        .aboutme {
+            width: 70vw;
+            padding-left: 2vw;
+            font-family: 'Roboto Condensed', sans-serif;
+            font-size: 3rem;
+            color: rgb(92, 70, 17);
+        }
+
+        .expand-container {
+            padding: 0 5vw 10vh 5vw;
+        }
+
+        .secondary, .hobbies {
+            transition: transform 0.4s ease-in-out;
+        }
+
+        .secondary:hover, .hobbies:hover {
+            transform: scale(1.02);
+        }
+
+        .hobbies {
+            margin-top: 5vh;
+        }
+
+        #SecBox, #HobBox {
+            display: none;
+        }
+
+
+        #SecBox:checked ~ .expanded, #HobBox:checked ~ .expanded {
+            display: none;
+        }
+
+        #SecBox:checked ~ .drop, #HobBox:checked ~ .drop {
+            border-radius: 2.5vh
+        }
+
+        #SecBox:checked ~ .drop img, #HobBox:checked ~ .drop img{
+            transform: rotate(0deg);
+        }
+
+        .drop{
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            padding: 2vh 4vw 2vh 2vw;
+            background-color: rgb(92, 70, 17);
+            border-top-left-radius: 2.5vh;
+            border-top-right-radius: 2.5vh;
+        }
+
+        .drop img {
+            width: 2.5vw;
+            margin-top: auto;
+            margin-bottom: auto;
+            margin-left: 2vw;
+            transform: rotate(180deg);
+        }
+
+        .expanded {
+            display: block;
+            padding: 2vh;
+            word-wrap: break-word;
+            color: rgb(92, 70, 17);
+            background-color: white;
+            border: 0.3rem solid rgb(92, 70, 17);
+            border-bottom-left-radius: 2.5vh;
+            border-bottom-right-radius: 2.5vh;
+        }
+
+        .secondary-apps {
+            padding-top: 5vh;
+            padding-left: 2vw;
+        }
+
+        .secondary-apps img{
+            width: 10vw;
+            padding-right: 2vw;
+            transition: all 0.1s ease-in-out;
+        }
+
+        .secondary-apps img:hover {
+            transform: scale(1.08);
+        }
+
         #page2 {
-            color: aliceblue;
-            background-color: rgb(14, 97, 110);  
+            background: url(images/space2.gif);
+            background-color: rgb(48, 16, 84);            
+            background-blend-mode:lighten;
+            background-attachment: fixed;
         }
 
         #page3 {
-            color: aliceblue;
-            background-color: rgb(113, 16, 40);  
+            background-color: rgb(226, 171, 43); 
         }
 
         .sidebar {
@@ -179,7 +297,7 @@
             font-family: 'Nova Flat', sans-serif;
             font-size: 1rem;
             letter-spacing: 0.3rem;
-            color: rgb(255, 255, 255);
+            color: white;
         }
 
         body::-webkit-scrollbar { 
@@ -246,14 +364,14 @@
             letter-spacing: 0.2rem;
             color: white;
             background-color: rgb(48, 16, 84);
-            border: 0.3rem solid white;
+            border: 0.3rem;
             border-radius: 2vh;
-            border-style: outset;
-            mix-blend-mode: hard-light;            
+            border-style: outset;           
             opacity: 0;
             transform: scale(0.8);
-            pointer-events: none;
             transition: opacity 0.2s ease, transform 0.7s ease, border-width 0.5s ease;
+            mix-blend-mode: hard-light; 
+            pointer-events: none;
         }
 
         #toHome.show {
@@ -274,56 +392,43 @@
         @media only screen and (max-width: 600px) {
             h1 {
                 font-size: 2rem;
-                font-weight: 900;
-            }
-
-            section {
-                text-align: left;
             }
 
             #homepage {
                 height: fit-content;
+                background: url(images/space1.gif);
+                background-color: rgb(48, 16, 84);  
+                background-size: cover;          
+                background-attachment: fixed;
             }
 
             .info-container {
-                position: relative;
                 height: 0%; 
             }
 
-            .info {
+            #homepage .info {
                 position: relative;
-                margin-top: 25vh;
                 left: 15vw;
                 width: fit-content;
+                margin-top: 30vh;
                 margin-bottom: 2vh;
             }
 
             .sub1 {
                 width: 75vw;
-                margin-top: 4%;
                 font-size: 1.3rem;
-                font-weight: lighter;
-                opacity: 60%;
             }
 
             .highlight {
                 margin-top: -0.7vh;
-                margin-left: -0.3vw;
-                color: rgb(226, 171, 43);
                 font-size: 6.35rem;
-                font-weight: 1000;
             }
 
-            .icon-container {
-                margin-top: 6%;
-            }
-
-            .icon {
+            .icon img{
                 height: 6vh;
-                margin-right: 5%;
             }
 
-            .icon:hover {
+            .icon img:hover {
                 transform: none;
             }
 
@@ -335,35 +440,113 @@
                 justify-content: center;
             }
 
-            .navbar ul {
-                text-align: center;
-                list-style-type: none;
-            }
-
             .navbar li {
                 width: 70vw;
-                padding: 4vh 0vh 4vh 0vh;
-                background: linear-gradient(rgb(81, 22, 148), rgb(226, 171, 43));
-                border: 0.7rem solid rgb(226, 171, 43);
+                padding: 4vh;
                 border-style: outset;
+                border-width: 0.7rem;
             }
 
             .navbar div {
-                width: inherit;
-                font-family: 'Oxanium', sans-serif;
                 font-size: 1.5rem;
-                font-weight: bold;
-                text-shadow: 0.2rem 0.2rem 0.4rem #000;
             }
 
             .navbar li:hover {
-                padding: 4vh 0vh 4vh 0vh;
+                padding: 4vh;
                 margin: 0;
                 background: linear-gradient(rgb(81, 22, 148), rgb(226, 171, 43));
-                border: 0.7rem solid rgb(226, 171, 43);
-                border-style: outset;
+                border-width: 0.7rem ;
                 box-shadow: 0 0 0 0;
                 transform: none;
+            }
+
+            #page1 {
+                font-size: 1.5rem;
+            }
+
+            #page1 .info {
+                padding: 5vh 12vw; 
+                display: flex;
+                flex-direction: column;
+            }
+
+            .potrait {
+                position: relative;
+                width: 65vw;
+                margin-left: auto;
+                margin-right: auto;
+                border: 0.25rem solid rgb(92, 70, 17);
+                border-radius: 2.5vh;
+            }
+
+            .potrait img {
+                display: block;
+                width: 100%;
+                height: auto;
+            }
+
+            .potrait img:hover {
+                transform: none;
+            }
+
+            .aboutme {
+                width: 80vw;
+                padding-top: 5vh;
+                padding-right: 2vw;
+                margin-left: auto;
+                margin-right: auto;
+                font-size: 1.25rem;
+            }
+
+            .expand-container {
+                padding-left: 10vw;
+            }
+
+            .secondary:hover, .hobbies:hover {
+                transform: none;
+            }
+
+            .hobbies {
+                margin-top: 2vh;
+            }
+
+            .drop{
+                padding: 2vh 6vw 2vh 5vw;
+            }
+
+            .drop h2 {
+                font-size: 1.6rem;
+            }
+
+            .drop img {
+                width: 5vw;
+            }
+
+            .expanded {
+                padding: 1.8vh;
+                font-size: 1.3rem;
+                border-width: 0.2rem;
+            }
+
+            .secondary-apps {
+                padding-top: 5vh;
+                margin-left: 2px;
+            }
+
+            .secondary-apps img{
+                width: 20vw;
+            }
+
+            .secondary-apps img:hover {
+                transform: none;
+            }
+
+
+            #page2 {
+                background: url(images/space1.gif);
+                background-color: rgb(48, 16, 84);  
+                background-size: cover;          
+                background-attachment: fixed;
             }
 
             .inner-cursor, .outer-cursor {
@@ -373,7 +556,6 @@
             #toHome:hover {
                 border-width: 0.3rem;
                 transform: none;
-                pointer-events: auto;
             }
 
         }
@@ -410,10 +592,10 @@
                     <h1>Hi, I'm</h1>      
                     <h1 class="highlight">Balaji</h1>
                     <div class="sub1">A passionate student with a strong knack for creative thinking and design, dedicated to software and web development.</div>
-                    <div class="icon-container">
-                        <a href="https://www.linkedin.com/in/muruganantham-balaji/" target="_blank"><img class="icon" src="images/linkedin.png"></a>
-                        <a href="mailto:m.balaji6207@gmail.com" target="_blank"><img class="icon" src="images/gmail.png"></a>
-                        <a href="https://github.com/Balaji6207" target="_blank"><img class="icon" src="images/github.png"></a>
+                    <div class="icon">
+                        <a href="https://www.linkedin.com/in/muruganantham-balaji/" target="_blank"><img src="images/linkedin.png"></a>
+                        <a href="mailto:m.balaji6207@gmail.com" target="_blank"><img src="images/gmail.png"></a>
+                        <a href="https://github.com/Balaji6207" target="_blank"><img src="images/github.png"></a>
                     </div>
                 </div>
 
@@ -429,15 +611,61 @@
 
 
         <section id="page1">
-            <div class="info">
-                <!-- <h1>
-                    I'm Muruganantham Balaji, a Singapore Polytechnic student currently pursuing a Diploma in Computer Engineering.
-                    I'm passionate about frontend development to craft clean, intuitive and aesthetic web interfaces. With hands-on 
-                    experience in HTML, CSS, and JavaScript, I enjoy transforming ideas into engaging digital experiences that prioritize 
-                    both usability and design.
-                </h1>  -->
-            </div>          
+            <div class="info-container">
+                <div class="info">
+                    <div class="potrait"><img src="images/potrait2.png"></div>
+                    <div class="aboutme">
+                        I'm <b>Muruganantham Balaji</b>, a Singapore Polytechnic student currently pursuing a Diploma in Computer Engineering.
+                        I'm passionate about frontend development to craft clean, intuitive and aesthetic web interfaces. With hands-on 
+                        experience in HTML, CSS, and JavaScript, I enjoy transforming ideas into engaging digital experiences that prioritize 
+                        both usability and design.
+                    </div> 
+                </div>  
+                <div class="expand-container">
+                    <div class="secondary">
+                        <input id="SecBox" type="checkbox">
+
+                            <label for="SecBox" class="drop">
+                                <h2>Secondary Skills</h2>
+                                <img src="images/arrow-white.png">
+                            </label>
+                        <div class="expanded">
+                            Throughout my time from Secondary School to Polytechnic, I have explored various interfaces, 
+                            focusing particularly on those where I found passion and dedicated effort to improve my skills significantly. 
+                            These are the interfaces where I feel truly skilled and capable: <b>PowerPoint, PicsArt, and CapCut.</b>
+                            <br>
+                            <div class="secondary-apps">
+                                <a href="https://en.wikipedia.org/wiki/Microsoft_PowerPoint" target="_blank"><img src="images/powerpoint.png"></a>
+                                <a href="https://en.wikipedia.org/wiki/Picsart" target="_blank"><img src="images/picsart.png"></a>
+                                <a href="https://en.wikipedia.org/wiki/CapCut" target="_blank"><img src="images/capcut.png"></a>
+                            </div>
+                            <br>
+                            While they may 
+                            not directly relate to my current course of study, they have enriched my ability to create compelling 
+                            presentations, visually appealing posters, and engaging videos
+                        </div>
+                    </div>
+                    <div class="hobbies">
+                        <input id="HobBox" type="checkbox">                        
+ 
+                            <label for="HobBox" class="drop">
+                                <h2>My Hobbies</h2>
+                                <img src="images/arrow-white.png">
+                            </label>
+                        <div class="expanded">
+                            I'm really into movies and often head to theaters to catch the latest releases. At home, I've created 
+                            a collection of Marvel movie posters that I proudly display on my wall. Besides movies, I also enjoy 
+                            editing photos and videos for personal projects, trying out different styles and techniques to express 
+                            my creativity visually. 
+                            Moreover, I sometimes dabble in coding during my free time to bring to life some of 
+                            the small ideas that pop into my head.<br><br>These hobbies give me a lot of joy and keep me inspired to explore 
+                            new ways of expressing myself and coming up with innovative ideas.
+                        </div>
+                    </div>
+                </div>
+            </div>        
         </section>
+        
 
         <section id="page2">
             <h1>Hello, I'm Balaji</h1>
@@ -484,7 +712,7 @@
         outerCursor.style.top = `${y}px`;
     }
 
-    const clickableElements = document.querySelectorAll('.sidetext, .icon, .navbar li, #toHome');
+    const clickableElements = document.querySelectorAll('.sidetext, .icon, .navbar li, #toHome, .drop, .secondary-apps img');
 
     clickableElements.forEach(el => {
         el.addEventListener("mouseenter", () => {
