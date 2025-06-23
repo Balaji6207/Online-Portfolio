@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Google Sans">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Nova Flat">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Oxanium">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto Condensed">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto Condensed"> 
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Rancho&effect=shadow-multiple|anaglyph">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Rancho&effect=shadow-multiple|3d">
     <style>        
@@ -34,8 +34,25 @@
             height: fit-content;
             min-height: 100vh;
             text-align: left;
-            color: aliceblue;
+            color: white;
         }
+
+        .page-title {
+            position: sticky;
+            top: 0;
+            z-index: 98;
+            justify-self: end;
+            width: 12vw;
+            padding: 1vh;
+            padding-left: 2vw;
+            font-size: 1.2rem;
+            text-align: center;
+            color: rgb(255, 255, 255);
+            background-color: rgb(0, 0, 0);
+            border-bottom-left-radius: 5vh;
+
+        }
+
 
         #homepage {
             height: 100vh;
@@ -268,10 +285,71 @@
         }
 
         #page2 {
+            font-size: 2rem;
             background: url(images/space2.gif);
             background-color: rgb(48, 16, 84);            
             background-blend-mode:lighten;
             background-attachment: fixed;
+        }
+
+        #page2 .info {
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            padding: 10vh 5vw; 
+        }
+
+        #page2 h1 {
+            margin-bottom: 5vh;
+            font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+            font-size: 3rem;
+        }
+
+        #page2 p {
+            margin-bottom: 2vh;
+            font-size: 3rem;
+            font-weight: bolder;
+        }
+
+        .tech-container {
+            padding: 5vh;
+            margin-bottom: 5vh;
+            color: rgb(48, 16, 84); 
+            background: linear-gradient(rgb(255, 255, 255), rgba(255, 255, 255, 0));
+            border: 0.5rem solid white;
+            border-radius: 5vh;
+        }
+
+        .techs {
+            display: flex;
+            flex-direction: row;
+            flex-wrap: wrap;
+            padding: 2vh 0;
+            margin-bottom: 2vh;   
+        }
+
+        .techs div {
+            display: flex;
+            align-items: center; 
+            width: fit-content;
+            padding: 2vh 2vw;
+            margin-top: 0.75vw;
+            margin-bottom: 0.75vw;
+            margin-right: 1.5vw;
+            font-size: 1.5rem;
+            color: black;
+            background-color: white;
+            border-radius: 3vh;      
+            transition: all 0.2s ease-in-out; 
+        } 
+        
+        .techs div:hover {
+            transform: scale(1.1);     
+        }    
+
+        #page2 img {
+            height: 5vh;
+            margin-right: 2vw;
         }
 
         #page3 {
@@ -282,6 +360,7 @@
             position: fixed;
             top: 50%;
             left: 0;
+            z-index: 99;
             height: 100%;
             text-align: center;
             writing-mode: vertical-rl; 
@@ -394,6 +473,14 @@
                 font-size: 2rem;
             }
 
+            .page-title {
+                width: 40vw;
+                padding: 1vh;
+                padding-left: 5vw;
+                font-size: 1rem;
+                border-bottom-left-radius: 5vh;
+            }
+
             #homepage {
                 height: fit-content;
                 background: url(images/space1.gif);
@@ -465,9 +552,9 @@
             }
 
             #page1 .info {
-                padding: 5vh 12vw; 
                 display: flex;
                 flex-direction: column;
+                padding: 5vh 12vw; 
             }
 
             .potrait {
@@ -534,7 +621,7 @@
 
             .secondary-apps {
                 padding-top: 5vh;
-                margin-left: 2px;
+                margin-left: 2vw;
             }
 
             .secondary-apps img{
@@ -551,6 +638,50 @@
                 background-color: rgb(48, 16, 84);  
                 background-size: cover;          
                 background-attachment: fixed;
+            }
+
+            #page2 {
+                font-size: 1rem;
+            }
+
+            #page2 .info {
+                padding: 5vh 8vw 5vh 12vw; 
+            }
+
+            #page2 h1 {
+                font-size: 1.7rem;
+            }
+
+            #page2 p {
+                font-size: 1.8rem;
+            }
+
+            .tech-container {
+                padding: 2.5vh;
+                margin-bottom: 3vh;
+                border-radius: 4vh;
+                border-width: 0.25rem;
+            }
+
+            .techs {
+                padding: 1vh 0; 
+            }
+
+            .techs div {
+                padding: 1vh 6vw;
+                margin-top: 0.75vw;
+                font-size: 1rem;
+                border-width: 0.1rem;
+                border-radius: 2vh;      
+            } 
+            
+            .techs div:hover {
+                transform: none;     
+            }    
+
+            #page2 img {
+                height: 3vh;
+                margin-right: 3vw;
             }
 
             .inner-cursor, .outer-cursor {
@@ -606,7 +737,7 @@
                 <nav class="navbar">
                     <ul>
                         <a href="#page1"><li><div>About Me</div></li></a>
-                        <a href="#page2"><li><div>My Stack</div></li></a>
+                        <a href="#page2"><li><div>Technologies</div></li></a>
                         <a href="#page3"><li><div>My Projects</div></a></li></a>
                     </ul>
                 </nav>
@@ -616,6 +747,7 @@
 
         <section id="page1">
             <div class="info-container">
+                <div class="page-title">About Me</div>
                 <div class="info">
                     <div class="potrait"><img src="images/potrait2.png"></div>
                     <div class="aboutme">
@@ -646,7 +778,7 @@
                             <br>
                             While they may 
                             not directly relate to my current course of study, they have enriched my ability to create compelling 
-                            presentations, visually appealing posters, and engaging videos
+                            presentations, visually appealing posters, and engaging videos.
                         </div>
                     </div>
                     <div class="hobbies">
@@ -672,17 +804,63 @@
         
 
         <section id="page2">
-            <h1>Hello, I'm Balaji</h1>
-            <p>Testing home</p>
-            <p>Testing home</p>
-            <p>Testing home</p>            
+            <div class="info-container">
+                <div class="page-title">Technologies</div>
+                <div class="info">
+                        <div class="tech-container">
+                            <p>Web Development</p>
+                            <div class="techs">
+                                <div><img src="images/html.png">HTML</div>
+                                <div><img src="images/css.png">CSS</div>
+                                <div><img src="images/javascript.png">JavaScript</div>
+                                <div><img src="images/php.png">PHP</div>
+                                <div><img src="images/git.png">Git</div>
+                                <div><img src="images/github2.png">GitHub</div>  
+                                <div><img src="images/xampp.png">XAMPP</div> 
+                                <div><img src="images/mysql.png">MySQL</div>
+                            </div>
+                        </div>
+                        <div class="tech-container">
+                            <p>Programming Langauges</p>
+                            <div class="techs">
+                                <div><img src="images/cLogo.png">C</div>
+                                <div><img src="images/cppLogo.png">C++</div>
+                                <div><img src="images/python.png">Python</div>
+                                <div><img src="images/java.png">Java</div>
+                            </div>
+                        </div>
+                        <div class="tech-container">
+                            <p>Hardware and IOT</p>
+                            <div class="techs">
+                                <div><img src="images/arduino.png">Arduino</div>
+                                <div><img src="images/raspberry.png">Raspberry Pi</div>  
+                                <div><img src="images/thingspeak.jpeg">ThingSpeak</div>   
+                            </div>
+                        </div>
+                        <div class="tech-container">
+                            <p>Data and Analytics</p>
+                            <div class="techs">
+                                <div><img src="images/knime.png">Knime</div>
+                                <div><img src="images/powerbi.png">Power BI</div>
+                            </div>
+                        </div>
+                        <div class="tech-container">
+                            <p>Design</p>
+                            <div class="techs">
+                                <div><img src="images/cad.png">AutoCAD</div>
+                                <div><img src="images/inventor.png">AutoDesk Inventor</div>
+                            </div>
+                        </div>
+                </div>
+            </div>          
         </section>
 
         <section id="page3">
-            <h1>Hello, I'm Balaji</h1>
-            <p>Testing home</p>
-            <p>Testing home</p>
-            <p>Testing home</p>            
+            <div class="info-container">
+                <div class="page-title">My Projects</div>
+                <div class="info">
+                </div>
+            </div>      
         </section>
 
         <img src="images/crosshair5.png" class="inner-cursor">
@@ -752,6 +930,6 @@
         document.documentElement.scrollTop = 0;
     }
 </script>
-</script>
+
 
 </html>
