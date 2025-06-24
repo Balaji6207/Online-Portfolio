@@ -315,7 +315,7 @@
             margin-bottom: 5vh;
             color: rgb(48, 16, 84); 
             background: linear-gradient(rgb(255, 255, 255), rgba(255, 255, 255, 0));
-            border: 0.5rem solid white;
+            border: 0.3rem solid white;
             border-radius: 5vh;
         }
 
@@ -352,7 +352,76 @@
         }
 
         #page3 {
+            font-size: 1.5rem;
             background-color: rgb(226, 171, 43); 
+        }
+
+        #page3 .info {
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            padding: 10vh 5vw; 
+            color: rgb(92, 70, 17);
+        }
+
+        #page3 h1 {
+            padding-left: 1vw;
+        }
+
+        #page3 hr {
+            width: 84vw;
+            margin-top: 2vh;
+            margin-bottom: 8vh;
+            border: 0.2vh solid rgb(92, 70, 17);
+        }
+
+        .PD-container {
+            display: flex;
+            flex-direction: row;
+            flex-wrap: wrap;
+            width: 90vw;
+            margin: 5vh 0;
+        }
+
+        .PD-container img {
+            width: 100%;
+            padding: 0.5vh;
+            border-top-left-radius: 5vh;
+            border-top-right-radius: 5vh;
+        }
+
+        .proj-container, .demo-container {
+            display: flex;
+            flex-direction: column;
+            width: 20vw;
+            margin-bottom: 1vw;
+            margin-right: 1vw;
+            color: black;
+            background-color: white;
+            border-radius: 5vh;
+        }
+
+        .proj-container p, .demo-container p {
+            min-height: 15vh;
+            padding: 2vh 1.5vw;
+            text-align: center;
+        }
+
+        .proj-container a, .demo-container a {
+            padding: 1vh 1vw;
+            margin: 0 4vw 3vh 4vw;
+            font-size: 1.2rem;
+            text-align: center;
+            color: rgb(92, 70, 17);;
+            background-color: rgb(226, 171, 43); 
+            border-radius: 5vh;
+            transition: all 0.2s ease-in-out;
+        }
+
+        .proj-container a:hover, .demo-container a:hover {
+            transform: scale(1.1);
+            color: rgb(70, 53, 13);; 
+            background-color: rgb(178, 134, 33); 
         }
 
         .sidebar {
@@ -683,6 +752,35 @@
                 margin-right: 3vw;
             }
 
+            #page3 {
+                font-size: 1.4rem;
+            }
+
+            #page3 .info {
+                padding: 5vh 8vw 5vh 12vw; 
+            }
+
+            #page3 hr {
+                width: 80vw;
+                margin-top: 0;
+                border-width: 0.1vh;
+            }
+
+            .PD-container {
+                width: 80vw;
+            }
+
+            .proj-container, .demo-container {
+                width: 80vw;
+                margin-bottom: 5vw;
+            }
+
+            .proj-container a:hover, .demo-container a:hover {
+                transform: none;
+                color: rgb(92, 70, 17);;
+                background-color: rgb(226, 171, 43); 
+            }
+
             .inner-cursor, .outer-cursor {
                 display: none;
             }
@@ -737,7 +835,7 @@
                     <ul>
                         <a href="#page1"><li><div>About Me</div></li></a>
                         <a href="#page2"><li><div>Technologies</div></li></a>
-                        <a href="#page3"><li><div>My Projects</div></a></li></a>
+                        <a href="#page3"><li><div>Projects & Demos</div></a></li></a>
                     </ul>
                 </nav>
             </div>
@@ -814,8 +912,7 @@
                                 <div><img src="images/javascript.png">JavaScript</div>
                                 <div><img src="images/php.png">PHP</div>
                                 <div><img src="images/git.png">Git</div>
-                                <div><img src="images/github2.png">GitHub</div>  
-                                <div><img src="images/xampp.png">XAMPP</div> 
+                                <div><img src="images/github2.png">GitHub</div>   
                                 <div><img src="images/mysql.png">MySQL</div>
                             </div>
                         </div>
@@ -856,10 +953,57 @@
 
         <section id="page3">
             <div class="info-container">
-                <div class="page-title">My Projects</div>
+                <div class="page-title">Projects</div>
                 <div class="info">
-                </div>
-            </div>      
+                    <h1>Software & Hardware Systems</h1>
+                    <div class="PD-container">
+                        <div class="proj-container">
+                            <img src="images/sky.png">
+                            <p>Movie Booking Website</p>
+                            <a href="project1.html">View</a>
+                        </div>
+                        <div class="proj-container">
+                            <img src="images/workout.png">
+                            <p>Fitness App</p>
+                            <a href="">View</a>
+                        </div>
+                        <div class="proj-container">
+                            <img src="images/piggy.png">
+                            <p>Smart Piggy Bank</p>
+                            <a href="">View</a>
+                        </div>
+                        <div class="proj-container">
+                            <img src="images/umborrow.png">
+                            <p>Umbrella Sharing System</p>
+                            <a href="">View</a>
+                        </div>
+                    </div>
+                    <hr>
+                    <h1>Videos and Presentation Slides</h1>
+                    <div class="PD-container">
+                        <div class="demo-container">
+                            <img src="images/betterspend.png">
+                            <p>Advertisement Video for Smart Piggy Bank</p>
+                            <a href="">View</a>
+                        </div>
+                        <div class="demo-container">
+                            <img src="images/umborrow_slides.png">
+                            <p>Slides for Umbrella Sharing System</p>
+                            <a href="">View</a>
+                        </div>
+                        <div class="demo-container">
+                            <img src="images/penny.png">
+                            <p>Slides for Concept Demonstration of an App</p>
+                            <a href="">View</a>
+                        </div>
+                        <div class="demo-container">
+                            <img src="images/toaster.png">
+                            <p>Slides for the Engineering of a Toaster</p>
+                            <a href="">View</a>
+                        </div>
+                    </div>
+                </div> 
+            </div>     
         </section>
 
         <img src="images/crosshair5.png" class="inner-cursor">
@@ -893,7 +1037,7 @@
         outerCursor.style.top = `${y}px`;
     }
 
-    const clickableElements = document.querySelectorAll('.sidetext, .icon, .navbar li, #toHome, .drop, .secondary-apps img');
+    const clickableElements = document.querySelectorAll('.sidetext, .icon, .navbar li, #toHome, .drop, .secondary-apps img, .proj-container a, .demo-container a');
 
     clickableElements.forEach(el => {
         el.addEventListener("mouseenter", () => {
@@ -929,6 +1073,5 @@
         document.documentElement.scrollTop = 0;
     }
 </script>
-
 
 </html>

@@ -1,0 +1,391 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Muruganantham Balaji's Portfolio</title>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+            font-family: 'Google Sans', sans-serif;
+            cursor: none;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        h1 {
+            font-size: 4.37rem;
+            font-weight: 1000;
+        }
+
+        section {
+            display: flex;
+            flex-direction: column;
+            height: fit-content;
+            min-height: 100vh;
+            text-align: left;
+            color: rgb(92, 70, 17);
+        }
+
+        .info-container {
+            position: relative;
+            height: 100%; 
+        }
+
+        a:link {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        a:visited {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        a:active {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        #page1 {
+            font-size: 2rem;
+            background-color: rgb(226, 171, 43);  
+        }
+
+        #page1 .info {
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            padding: 10vh 5vw; 
+        }
+
+        #page1 p {
+            padding: 2vh 3vw 5vh 0;
+        }
+
+        .back-btn {
+            display: flex;
+            width: fit-content;
+            margin-bottom: 5vh;
+            align-items: center;
+            transition: all 0.4s ease-in-out;
+        }
+
+        .back-btn:hover {
+            transform: scale(1.1);
+        }
+
+        .back-btn img{
+            width: auto;
+            height: 2.7vh;
+            margin-right: 1vw;
+        }
+
+        .back-btn h1 {
+            font-size: 2rem;
+            font-weight: 600;
+            text-decoration: underline;
+        }
+
+        .content {
+            display: flex;
+            flex-wrap: wrap;
+            align-self: center;
+        }
+
+        .content img, .content video {
+            width: 90vw;
+            margin: 2vh 0;
+            border: 0.3rem solid rgb(92, 70, 17);;
+            border-radius: 3vh;
+        }
+
+        .techs {
+            display: flex;
+            flex-direction: row;
+            flex-wrap: wrap;
+            padding: 2vh 0;
+            margin-bottom: 2vh;   
+        }
+
+        .techs div {
+            display: flex;
+            align-items: center; 
+            width: fit-content;
+            padding: 1.5vh 1.5vw;
+            margin-top: 0.75vw;
+            margin-bottom: 0.75vw;
+            margin-right: 1.5vw;
+            font-size: 1.3rem;
+            color: black;
+            background-color: white;
+            border-radius: 2.5vh;      
+            transition: all 0.2s ease-in-out; 
+        } 
+
+        .techs div:hover {
+            transform: scale(1.1);     
+        }    
+
+        .techs img {
+            height: 3vh;
+            margin-right: 2vw;
+        }
+
+        body::-webkit-scrollbar { 
+            display: none; 
+        }
+
+        .progress-container {
+            position: fixed;
+            top: 35vh;
+            right: 1.7vw;
+            z-index: 98; 
+            width: 0.3vw;
+            height: 30vh;
+            background-color: rgba(255, 255, 255, 0.25);
+            border-radius: 100vh;
+            mix-blend-mode: difference;
+        }
+
+        #progBar {
+            position: absolute;
+            top: 0;
+            width: 0.3vw;
+            height: 0%; 
+            background-color: #fffb00;
+            border-radius: 100vh;
+            box-shadow: 0 0 1.6rem 0.1rem #fffb00;
+        }
+
+        .inner-cursor {
+            position: fixed;
+            left: 5vw;
+            z-index: 100;
+            width: 5vw;
+            height: 5vw;
+            border-radius: 50%;
+            transform: translate(-50%, -50%);
+            mix-blend-mode: difference;
+            pointer-events: none;
+        }
+
+        .outer-cursor {
+            position: fixed;
+            left: 5vw;
+            z-index: 100;
+            width: 3.7vw;
+            height: 3.7vw;
+            border: 0.1rem solid rgb(157, 255, 0);
+            border-radius: 50%;
+            transform: translate(-50%, -50%);
+            transition: transform 0.5s ease, border-width 0.5s ease;
+            mix-blend-mode: difference;
+            pointer-events: none;
+        }
+
+        #toHome {
+            position: fixed;
+            bottom: 2vh;
+            right: 1.7vw;
+            z-index: 99;
+            padding: 1vh;
+            font-family: 'Oxanium', sans-serif;
+            font-size: 0.75rem;
+            font-weight: bold;
+            letter-spacing: 0.2rem;
+            color: white;
+            background-color: rgb(48, 16, 84);
+            border: 0.3rem;
+            border-radius: 2vh;
+            border-style: outset;           
+            opacity: 0;
+            transform: scale(0.8);
+            transition: opacity 0.2s ease, transform 0.7s ease, border-width 0.5s ease;
+            mix-blend-mode: hard-light; 
+            pointer-events: none;
+        }
+
+        #toHome.show {
+            opacity: 1;
+            transform: scale(1);
+            pointer-events: auto;
+        }
+
+        #toHome:hover {
+            border-width: 0.4rem;
+            transform: scale(1.2);
+            pointer-events: auto;
+        }
+
+
+        /* Extra small devices (phones, 600px and down) */
+        @media only screen and (max-width: 600px) {
+            h1 {
+                font-size: 2.2rem;
+            }
+
+            #page1 {
+                font-size: 1.5rem;
+            }
+
+            #page1 .info {
+                padding: 5vh 5vw; 
+            }
+
+            .back-btn:hover {
+                transform: none;
+            }
+
+            .back-btn img{
+                height: 2vh;
+            }
+
+            .back-btn h1 {
+                font-size: 1.5rem;
+            }
+
+            .techs div {
+                padding: 1.2vh 1.5vw;
+                font-size: 1rem;
+                border-radius: 2vh;      
+            } 
+
+            .techs div:hover {
+                transform: none;     
+            }    
+
+            .techs img {
+                height: 2vh;
+            }
+
+            .inner-cursor, .outer-cursor {
+                display: none;
+            }
+
+            #toHome:hover {
+                border-width: 0.3rem;
+                transform: none;
+            }
+        }
+    </style>
+</head>
+<body>
+        <div class="container">
+            <section id="page1">
+                <div class="info-container">
+                    <div class="info">
+                        <a href="index.html" class="back-btn">
+                            <img src="images/back-arrow.png">
+                            <h1>Back</h1>
+                        </a>
+                        <h1>Movie Booking Website</h1>
+                        <p>2025</p>
+                        <div class="content">
+                            <video controls autoplay muted> <source src="videos/skycinemas.mp4" type="video/mp4"> </video>
+                        </div>
+                        <h2>Tools & Technologies</h2>
+                        <div class="techs">
+                            <div><img src="images/html.png">HTML</div>
+                            <div><img src="images/css.png">CSS</div>
+                            <div><img src="images/javascript.png">JavaScript</div>
+                            <div><img src="images/php.png">PHP</div>
+                            <div><img src="images/git.png">Git</div>
+                            <div><img src="images/github2.png">GitHub</div>  
+                            <div><img src="images/vscode.png">VS Code</div>
+                            <div><img src="images/xampp.png">XAMPP</div> 
+                            <div><img src="images/mysql.png">MySQL</div>
+                            <div><img src="images/figma.png">Figma</div>
+                        </div>  
+                        <h2>Description</h2>
+                        <p>
+                            <i>Sky Cinemas</i> is a website for booking movie showtimes and 
+                            seats. Customers can browse and book tickets for the latest releases, 
+                            as well as purchase snacks and get promotions. Staff 
+                            members have access to an staff portal to manage movies, promotions, 
+                            and snack options.
+                        </p>
+                        <h2>My Role</h2>
+                        <p>
+                            I worked with a member in a group of five to manage the frontend
+                            development of the website. I worked on the customer portal, while
+                            my partner worked on the staff portal. After researching and getting
+                            inspirations from popular movie websites, we designed the workflow
+                            and UI of the website in Figma. Then, I had to translate the Figma
+                            design using HTML, CSS and JavaScript. I learnt new techniques like
+                            creating an expand button, a drag-to-scroll function, and hover effects.
+                        </p>
+                    </div>  
+                </div>        
+            </section>
+            
+
+            <img src="images/crosshair5.png" class="inner-cursor">
+            <div class="outer-cursor"></div>
+        </div>
+
+        <div class="progress-container">
+            <div id="progBar"></div>
+        </div>
+
+        <button onclick="topFunction()" id="toHome" title="Back To Top">Back To Top</button>
+    </body>
+
+    <script> //cursor javascript
+        let innerCursor = document.querySelector(".inner-cursor");
+        let outerCursor = document.querySelector(".outer-cursor");
+
+        document.addEventListener("mousemove", moveCursor);
+        
+        function moveCursor(e) {
+            let x = e.clientX;
+            let y = e.clientY;
+
+            innerCursor.style.left = `${x}px`;
+            innerCursor.style.top = `${y}px`;
+            outerCursor.style.left = `${x}px`;
+            outerCursor.style.top = `${y}px`;
+        }
+
+        const clickableElements = document.querySelectorAll(' #toHome, video, .back-btn');
+
+        clickableElements.forEach(el => {
+            el.addEventListener("mouseenter", () => {
+                outerCursor.style.transform = "translate(-50%, -50%) scale(0.7)";
+                outerCursor.style.borderWidth = "20px"
+            });
+            el.addEventListener("mouseleave", () => {
+                outerCursor.style.transform = "translate(-50%, -50%) scale(1)";
+                outerCursor.style.borderWidth = "1.7px"
+            });
+        });
+    </script>
+
+    <script> //progress bar and to home button
+        let mybutton = document.getElementById("toHome");
+        let progBar = document.getElementById("progBar");
+
+        window.onscroll = function () {
+            
+            let winScroll = document.body.scrollTop || document.documentElement.scrollTop;
+            let height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+            let scrolled = (winScroll / height) * 100;
+            progBar.style.height = scrolled + "%";
+
+            if (winScroll > 20) {
+                mybutton.classList.add("show");
+            } else {
+                mybutton.classList.remove("show");
+            }
+        };
+
+        function topFunction() {
+            document.documentElement.scrollTop = 0;
+        }
+    </script>
+</body>
+</html>
